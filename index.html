@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stover</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<style>
+    body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+fieldset,
+legend,
+figure,
+menu {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+table,
+th,
+td {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+body,
+input,
+textarea,
+keygen,
+select,
+button {
+  font: normal 12px/1.2 "Open Sans", "Noto Sans", sans-serif;
+}
+
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  color: #333;
+  outline: 0;
+  vertical-align: middle;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+a,
+button,
+input[type=submit],
+input[type=button],
+input[type=reset] {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #131313;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background: url(./img_src/Main-bg.png) no-repeat 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.2s ease-in-out;
+  z-index: 100;
+  background: linear-gradient(black, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.nav-up {
+  top: -15vh;
+}
+
+.header .nav {
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav > a > img {
+  width: 100px;
+  display: flex;
+}
+
+.header .nav .ul {
+  width: 29%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .nav .ul .li {
+  text-decoration: none;
+}
+
+.header .nav .ul .li a {
+  font-size: 1.8vh;
+  font-weight: 500;
+  color: white;
+}
+
+.header .nav .ul .li a:hover {
+  color: #D0F500;
+  transition: all 1s ease;
+}
+
+.icon-wrap {
+  display: flex;
+  justify-content: space-evenly;
+  width: 8%;
+  height: 22px;
+  text-align: center;
+  align-items: center;
+}
+
+.icon-wrap img {
+  width: fit-content;
+  height: 20px;
+  padding: 10px px;
+}
+
+.main-slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vh;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding-top: 20%;
+  margin-bottom: 243px;
+}
+
+.btn-download {
+  width: 273px;
+  height: 84px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 237px;
+  margin-left: 1300px;
+  border-radius: 88px;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.btn-download a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.btn-download:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+  color: #fff;
+}
+
+.btn-download:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+.btn-download:active {
+  top: 2px;
+}
+
+#section01 {
+  display: flex;
+  width: 100%;
+  height: 1193px;
+}
+
+.left_content {
+  width: 48%;
+  height: 100%;
+  margin-left: 6%;
+}
+
+.main1 {
+  width: 100%;
+  font-size: 6vh;
+  line-height: 126.8%;
+  color: white;
+  font-weight: bold;
+  margin-top: 180px;
+  margin-bottom: 148px;
+}
+
+.left_content .small_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 270px;
+  height: 182px;
+  background-color: white;
+  border-radius: 30px;
+  margin-left: 12%;
+}
+
+.head {
+  display: flex;
+  width: 242px;
+  height: 54px;
+  margin-bottom: 23px;
+  margin-left: 29px;
+  font-weight: bold;
+}
+
+.head .small_box_img {
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  background-color: #333;
+}
+
+.head > p {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  line-height: 135.8%;
+}
+
+.small_box > p {
+  font-size: 16px;
+  margin-left: 29px;
+}
+
+.middle_content {
+  width: 35%;
+  height: 100%;
+  margin-right: 10%;
+}
+
+.phone_gif {
+  display: flex;
+  width: 100%;
+  height: 72%;
+  margin-top: 41%;
+  background-color: #6a6a6a;
+}
+
+.right_content {
+  width: 30%;
+  height: 100%;
+}
+
+.right_content .small_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 73%;
+  height: 182px;
+  background-color: white;
+  border-radius: 30px;
+  margin-top: 850px;
+}
+
+#section2 {
+  width: 100%;
+  height: 1482px;
+  background-color: #ababab;
+  text-align: center;
+  padding-bottom: 7%;
+}
+
+#section2 > h2 {
+  font-size: 4.8vh;
+  font-weight: bolder;
+  padding-top: 12%;
+  margin-bottom: 1.2%;
+  color: black;
+}
+
+#section2 > p {
+  font-size: 4vh;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 9%;
+}
+
+#video {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 60%;
+  background-color: #2a2a2a;
+  margin: 10% auto;
+}
+
+#section3 {
+  display: flex;
+  width: 100%;
+  height: 1080px;
+  background-color: rgb(220, 220, 220);
+}
+
+#left_content3 {
+  width: 50%;
+  height: 100%;
+}
+
+#left_content3 > img {
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+  height: 872px;
+  background-color: #9a9a9a;
+}
+
+#right_content3 > h2 {
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 126.5%;
+  margin: 18% 0 10% 3%;
+}
+
+#right_content3 {
+  width: 50%;
+}
+
+#right_content3 .click_list {
+  display: flex;
+  width: 517px;
+  height: 61px;
+  font-size: 2vh;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 8%;
+  margin-left: 34px;
+}
+
+#right_content3 .li {
+  width: 150px;
+  padding-top: 2.5%;
+  margin-top: 20px;
+}
+
+.click_list .li:hover {
+  border-bottom: 4px solid black;
+  background-color: #ff4343;
+  cursor: pointer;
+}
+
+#right_content3 > h3 {
+  font-size: 3.3vh;
+  margin-bottom: 31px;
+  margin-left: 34px;
+  font-weight: bold;
+}
+
+#right_content3 > p {
+  font-size: 2.45vh;
+  line-height: 174.5%;
+  margin-left: 34px;
+  margin-bottom: 294px;
+}
+
+#section4 {
+  width: 100%;
+  height: 1535px;
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.bg_wrap_move {
+  width: 100%;
+  background: url(./img_src/bg-4.png) no-repeat 200%;
+  background-attachment: fixed;
+}
+
+.bg_wrap {
+  display: inline-block;
+  width: 100%;
+  height: 1535px;
+}
+
+.h2_4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 77px;
+  font-size: 5.2vh;
+  font-weight: bold;
+  margin: 10% auto 1% auto;
+  color: white;
+}
+
+.p4_main {
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 4%;
+  background-color: #484848;
+}
+
+#contents_wrap4 {
+  display: flex;
+  width: 80%;
+  height: 1255px;
+  margin: 0 auto;
+}
+
+.left_content_4 {
+  display: flex;
+  justify-content: left;
+  width: 33.5%;
+  height: 100%;
+  margin-top: 9%;
+}
+
+.tag_box_4 {
+  width: 100%;
+  height: 30%;
+  background-color: #c6c6c6;
+  border-radius: 30px;
+  color: white;
+}
+
+.black_box {
+  position: relative;
+  top: 60%;
+  width: 100%;
+  height: 40%;
+  padding-top: 5%;
+  background-color: #000000;
+  border-radius: 0 0 30px 30px;
+}
+
+.contents_wrap_box4 {
+  width: 89%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.tag_wrap {
+  display: flex;
+  width: 100%;
+}
+
+.tag_4 {
+  height: 12%;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 2% 3%;
+  margin: 2% 1%;
+}
+
+.title_star {
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #c6c6c6;
+}
+
+.box4_title {
+  padding-left: 2%;
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+.star_4 {
+  font-size: 1.7vh;
+}
+
+.p4 {
+  text-align: left;
+  font-size: 1.5vh;
+  line-height: 140%;
+  margin-top: 2%;
+  padding-left: 2%;
+}
+
+#middle_content4 {
+  width: 33.5%;
+}
+
+#middle_content4 img {
+  width: 100%;
+}
+
+#right_content_4 {
+  display: flex;
+  justify-content: right;
+  width: 33%;
+  height: 100%;
+  margin-top: 9%;
+}
+
+.tag_box_4 {
+  width: 75%;
+  height: 30%;
+  background-color: #c6c6c6;
+  border-radius: 30px;
+  color: white;
+}
+
+.black_box {
+  position: relative;
+  top: 60%;
+  width: 100%;
+  height: 40%;
+  padding-top: 5%;
+  background-color: #000000;
+  border-radius: 0 0 30px 30px;
+}
+
+.contents_wrap_box4 {
+  width: 89%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.tag_wrap {
+  display: flex;
+  width: 100%;
+}
+
+.tag_4 {
+  height: 12%;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 2% 3%;
+  margin: 2% 1%;
+}
+
+.title_star {
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #c6c6c6;
+}
+
+.box4_title {
+  padding-left: 2%;
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+.star_4 {
+  font-size: 1.7vh;
+}
+
+.p4 {
+  text-align: left;
+  font-size: 1.5vh;
+  line-height: 140%;
+  margin-top: 2%;
+  padding-left: 2%;
+  background-color: #2a2a2a;
+}
+
+#section5 {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+.title_5 {
+  padding-top: 17%;
+  font-size: 5vh;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2%;
+  color: white;
+}
+
+.p_5 {
+  font-size: 2.5vh;
+  text-align: center;
+  margin-bottom: 2.5%;
+  color: white;
+}
+
+.flow_boxes {
+  display: flex;
+  width: 200%;
+  height: 25%;
+  margin-bottom: 10%;
+  overflow: hidden;
+}
+
+.content_wrap5 {
+  margin: 6% auto;
+  display: flex;
+}
+
+.flow li {
+  display: inline-block;
+  width: 650px;
+  height: 190px;
+  padding: 1.2%;
+  border-radius: 36px;
+  background-color: #000000;
+  margin: 0 0.9%;
+}
+
+.flow_title {
+  font-size: 3.2vh;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4%;
+}
+
+.flow_date {
+  font-size: 2.3vh;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 4%;
+}
+
+.flow_content {
+  font-size: 2.3vh;
+  font-weight: 400;
+  color: white;
+  line-height: 150%;
+}
+
+#section5-1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #959595;
+}
+
+.title5-1 {
+  font-size: 4vh;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding-top: 15%;
+  margin: 0 0 2% 0;
+}
+
+.contents5-1 {
+  font-size: 2.5vh;
+  color: white;
+  text-align: center;
+  margin-bottom: 8%;
+}
+
+.free_img {
+  width: 1200px;
+  height: 600px;
+  background-color: #424242;
+  color: white;
+  margin-bottom: 22%;
+}
+
+.flow.original {
+  animation: rollingleft1 33s linear infinite;
+}
+
+.flow.clone {
+  animation: rollingleft2 33s linear infinite;
+}
+
+@keyframes rollingleft1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.01% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes rollingleft2 {
+  0% {
+    transition: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+#section6 {
+  width: 100%;
+  height: 1408px;
+  background-color: #959595;
+}
+
+.sec_06_wrap {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sub_title_6 {
+  font-size: 3.2vh;
+  font-weight: 600;
+  margin-bottom: 4%;
+}
+
+.title_6 {
+  font-size: 7vh;
+  font-weight: bold;
+  margin-bottom: 8%;
+}
+
+.content_6 {
+  font-size: 3vh;
+  line-height: 152%;
+  margin-bottom: 13%;
+}
+
+.group_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80%;
+}
+
+.group1 {
+  width: 28.5%;
+  height: 100%;
+}
+
+.group_img {
+  display: inline-block;
+  width: 100%;
+  height: 500px;
+  background-color: #1a1a1a;
+  margin-bottom: 5%;
+}
+
+.contents_wrap6 {
+  display: flex;
+  width: 100%;
+}
+
+.icon_img {
+  display: inline-block;
+  width: 47px;
+  height: 47px;
+  background-color: #2a2a2a;
+}
+
+.group_content {
+  width: 80%;
+  height: 90px;
+  padding: 8% 3% 0 3%;
+  font-size: 1.57vh;
+  font-weight: 800;
+  line-height: 152%;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+#section7 {
+  width: 100%;
+  height: 565px;
+  background: url(./img_src/sec7-img.png);
+  margin: 0 auto;
+  background-color: #c6c6c6;
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.content_wrap7 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.content7 {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  font-size: 3vh;
+  line-height: 150%;
+  color: white;
+  padding-top: 10%;
+}
+
+.btn_use_stover {
+  width: 13%;
+  height: 63px;
+  border-radius: 80px;
+  background-color: #000000;
+  color: white;
+  font-size: 2vh;
+  font-weight: 800;
+  margin-top: 3%;
+}
+
+.btn_use_stover:hover {
+  background-color: #D0F500;
+  transition: all 1s ease;
+  color: black;
+  font-weight: bold;
+}
+
+#section8 {
+  width: 100%;
+  height: 100%;
+  background-color: #dedede;
+  margin-bottom: 3%;
+}
+
+.contents_wrap8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  margin: 0 auto;
+}
+
+.content_img8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 15%;
+}
+
+.team {
+  font-size: 9vh;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10%;
+  margin-bottom: 13%;
+  color: white;
+}
+
+#footer {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  line-height: 220%;
+  background-color: #131313;
+  color: #424242;
+}
+
+.footer_whole_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer_wrap {
+  display: flex;
+}
+
+.footer_title {
+  font-size: 2vh;
+  margin-bottom: 2%;
+  margin-right: 10%;
+}
+
+.left_footer_content {
+  margin-right: 5%;
+}
+
+.sns {
+  font-size: 2vh;
+  padding-right: 12%;
+}
+
+.right_footer_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_sns {
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.footer_sns a > img {
+  width: fit-content;
+  height: 22px;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+</style>
+<body>
+
+<div id="wrap">
+    <div class="bg">
+    <header class="header">
+        <nav class="nav">
+            <a href="# "><img src="./img_src/logo_white_ver.png" alt="logo들어갈 자리임"></a>
+            <ul class="ul">
+                <li class="li"><a href="#">VIDEO</a></li>
+                <li class="li"><a href="#">SERVICE</a></li>
+                <li class="li"><a href="#">VISION</a></li>
+                <li class="li"><a href="#">TEAM</a></li>
+            </ul>
+        
+
+            <div class="icon-wrap">
+                <a href="https://instagram.com/stover.official?igshid=OGQ5ZDc2ODk2ZA=="><img src="./img_src/icon_instargram.png" alt="icon" ></a>
+                <a href=""><img src="./img_src/icon_youtube.png" alt="icon" ></a>
+            </div>
+        </nav>
+    </header>
+
+<!-- 메인 콘텐츠 영역입니다. -->
+    <h2 class="main-slogan">CONNECTING PEOPLE<br>
+    &nbsp; &nbsp;WHO THE TRAVEL LIFE</h2>
+    <div><img src="" alt="비행기 이미지?"></div>
+    <button class="btn-download"><a href="">Download</a></button>
+</div>
+
+
+    <!-- section 영역 시작 -->
+    <section id="section01">
+        <div class="left_content">
+            <h2 class="main1">당신의 해외 생활을<br>스토버에서 공유해보세요!</h2>
+<!-- 작은 박스 영역입니다 -->
+            <div class="small_box">
+                <div class="head">
+                <img src="" alt="icon1" class="small_box_img">
+                <p>@kdesigner</p>
+                </div>
+            
+            <p>요즘은 날이 좋아도 너무 좋다...<br>행복했던 피크닉</p>
+            </div>
+        </div>
+<!-- 휴대폰 gif 영역입니다 -->
+        <div class="middle_content">
+            <img src="" alt="폰 gif 자리" class="phone_gif">
+        </div>
+
+        <div class="right_content">
+            <div class="small_box">
+                <div class="head">
+                <img src="" alt="icon" class="small_box_img">
+                <p>@Bgirl021</p>
+                </div>
+            
+            <p>워케이션 1일차 Day~<br>오피스 아래에서 베이글 맛집 탐색!</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section2"> 
+        <h2>당신의 한 달 살기에 스토버가 함께합니다.</h2>
+        <p>Stover is with you for a month.</p>
+<!-- 비디오 영역입니다. -->
+        <div id="video">비디오 영역입니다.</div>
+    </section>
+
+
+    <section id="section3">
+        <div id="left_content3">
+            <img src="" alt="이미지 입니다" id="sec3_left_img">
+        </div>
+
+        <div id="right_content3">
+            <h2>일상을 여행처럼,<br>스토버에서 만나보세요</h2>
+            <ul class="click_list">
+                <li class="li">커뮤니티</li>
+                <li class="li">중고거래</li>
+                <li class="li">내 주변</li>
+                <li class="li">워케이션</li>
+            </ul>
+            <h3>커뮤니티 서비스로 삶을 공유해요!</h3>
+            <p>STOVER의 메인 기능인 커뮤니티는 홈 화면에서<br>
+            만나볼 수 있는 서비스로 모임 둘러보기와 피드를 통해<br>
+            타지에서 새로운 친구를 만들고 다른 이들의 다양한<br>
+            경험을 보고 자신의 삶을 공유할 수 있는 매개체의<br>
+            역할을 가집니다.</p>
+        </div>
+    </section>
+
+
+    <section id="section4">
+        <div class="bg_wrap_move"></div>
+        <div class="bg_wrap">
+        <h2 class="h2_4">지도를 통해 주변 일자리와 시설을 찾아보세요!</h2>
+        <p class="p4_main">내 주변 위치 기반 지도를 이용해 주변의 일자리, 공원, 한인마트 등 필요한 시설 정보를 찾아 볼 수 있습니다.</p>
+        <!-- 콘텐츠 전체 영역 감싸는 부분 -->
+        <div id="contents_wrap4">
+
+        <div class="left_content_4">
+
+            <!-- 작은 박스 전체 -->
+            <div class="tag_box_4">     
+
+                <div class="black_box">
+                    <div class="contents_wrap_box4">
+
+                        <div class="tag_wrap">
+                            <p class="tag_4">휴식공간</p>
+                            <p class="tag_4">운동</p>
+                            <p class="tag_4">산책로</p>
+                        </div>
+
+                        <div class="title_star">
+                            <h4 class="box4_title">메이저스 힐 공원</h4>
+                            <p class="star_4">★ 9.8</p>
+                        </div>
+                        <p class="p4">Major's Hill Park는<br>아름다운 강 전망의 울창한 도심 공원으로 산책로와 정원이...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 중간 콘텐츠 영역 -->
+        <div id="middle_content4"><img src="./img_src/map_phone.png" alt=""></div>
+
+
+        <div id="right_content_4">
+            <div class="tag_box_4"> 
+
+                <div class="black_box">
+                    <div class="contents_wrap_box4">
+                        <div class="tag_wrap">
+                            <p class="tag_4">한인전용</p>   
+                            <p class="tag_4">생활</p>
+                            <p class="tag_4">식료품</p>
+                        </div>
+                        <div class="title_star">
+                            <h4 class="box4_title">OK MART</h4>
+                            <p class="star_4">★ 9.8</p>
+                        </div>
+                        <p class="p4">OK MART는<br>온타리오주 오타와에 위치한 한인마트로 배달 서비스를 가지...</div>
+                </div>
+            </div>
+        </div>
+                </div>
+
+    </section>
+
+
+    <section id="section5">
+        <h2 class="title_5">스토버에서 거주 지역 이슈를 간편하게 볼 수 있어요.</h2>
+        <p class="p_5">STOVER에서는 당신이 거주하는 지역의 최신 이슈 정보를 메인 화면에서 간편하게 확인 할 수 있습니다.</p>
+
+        <div class="flow_boxes">
+            <div class="flow"><!--원본배너-->
+                <ul class="content_wrap5">
+                    <li>
+                        <h2 class="flow_title">Nicholas Street 도로공사 주의보🚧</h2>
+                        <p class="flow_date">10.24 ~ 10.28</p>
+                        <p class="flow_content">417번 고속도로의 서쪽 진입로와 로리에 애비뉴 사이의<br>
+                            니콜라스 스트리트의 북쪽 방향 구간이 10월 24일 화요일부터<br>
+                        10월 28일 토요일까지 저녁 7시부터 오전6시 사이에 한 땅...</p>
+                    </li>
+
+                    <li>
+                        <h2 class="flow_title">화려한 막을 연 윈터루드 축제❄️</h2>
+                        <p class="flow_date">11.20 ~ 11.28</p>
+                        <p class="flow_content">1979년 캐나다에서 시작된 윈터루드는 오타와의 시내를<br>
+                        가로지르는 7.8km의 확장된 리도 운하에서 세계에서<br>
+                        가장 큰 스케이트 링크를 즐길 수 있습니다.</p>
+                    </li>
+                
+                    <li>
+                        <h2 class="flow_title">2023 Halloween Home Tour🎃</h2>
+                        <p class="flow_date">10.21 ~ 10.31</p>
+                        <p class="flow_content">캐나다의 오타와에서 할로윈을 맞아 '할로윈 홈 투어' 지도를<br>
+                        만들고 있어요. 유령을 찾는 사람들이 즐길 수 있도록 직접<br>
+                        꾸민 공포스러운 집을 공유해주세요!</p>
+                    </li>
+                
+                    <li>
+                        <h2 class="flow_title">2023 Halloween Home Tour🎃</h2>
+                        <p class="flow_date">10.21 ~ 10.31</p>
+                        <p class="flow_content">캐나다의 오타와에서 할로윈을 맞아 '할로윈 홈 투어' 지도를<br>
+                        만들고 있어요. 유령을 찾는 사람들이 즐길 수 있도록 직접<br>
+                        꾸민 공포스러운 집을 공유해주세요!</p>
+                    </li>
+
+                    <li>
+                        <h2 class="flow_title">2023 Halloween Home Tour🎃</h2>
+                        <p class="flow_date">10.21 ~ 10.31</p>
+                        <p class="flow_content">캐나다의 오타와에서 할로윈을 맞아 '할로윈 홈 투어' 지도를<br>
+                        만들고 있어요. 유령을 찾는 사람들이 즐길 수 있도록 직접<br>
+                        꾸민 공포스러운 집을 공유해주세요!</p>
+                    </li>
+                    </ul>
+    </div>
+</section>
+
+
+
+    <section id="section5-1">
+        <h2 class="title5-1">스마트워치를 추가해서 스토버 알림을 받아볼 수 있어요!</h2>
+        <p class="contents5-1">설정에서 스마트 워치를 추가하면 위치기반 지역 이슈 및 속보 또는 커뮤니티에 해당하는 알림을 워치로도 볼 수 있답니다!</p>
+
+        <div class="free_img">자유로운 디자인..</div>
+    </section>
+
+
+
+    <section id="section6">
+        <div class="sec_06_wrap">
+        <p class="sub_title_6">언제 어디서든 자유롭게 함께 여행하는, 스토버</p>
+        <h2 class="title_6">당신이 있는 곳,<br>언제 어디서든 스토버와 함께해요</h2>
+        <p class="content_6">하이퍼로컬 서비스, 스토버는 사용자 위치 기반 지역 생활 커뮨티 서비스로 스토버는 지역을 세분화해<br>
+        반경 10KM 이내 한인 이웃간의 소통과 모임의 장, 중고/렌탈 할 수 있는 직거래 활동, 동네 소식 등<br>
+        사용자 동네 관련 다양한 정보들을 한번에 경험할 수 있는 서비스 입니다.</p>
+
+        <div class="group_wrap">
+        <!-- 그룹 카드 3개 -->
+            <div class="group1">
+                <img src="" alt="그룹활동 이미지" class="group_img">
+                <div class="contents_wrap6">
+                    <img src="" alt="icon_img" class="icon_img">
+                    <p class="group_content">
+                        제가 거주하고 있는 지역에서 여러 한인분들과<br> 
+                        만나 사소한 정보를 공유하며 소통하는 재미가<br>
+                        있고 편리한 것 같아요!
+                    </p>
+                </div>
+            </div>
+
+            <div class="group1">
+                <img src="" alt="그룹활동 이미지" class="group_img">
+                <div class="contents_wrap6">
+                    <img src="" alt="icon_img" class="icon_img">
+                    <p class="group_content">
+                        여행 목적과 필요에 알맞은 숙소를 찾아 예약할<br>
+                        수 있도록 필텨를 적용하여 조건에 맞는 숙소를<br>
+                        찾을 수 있어 좋아요.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group1">
+                <img src="" alt="그룹활동 이미지" class="group_img">
+                <div class="contents_wrap6">
+                    <img src="" alt="icon_img" class="icon_img">
+                    <p class="group_content">
+                        본인 인증을 통해서 믿음과 신뢰가 가는 거래<br>
+                        를 할 수 있어서 안전하게 거래할 수 있어요!
+                    </p>
+                </div>
+            </div>
+
+            </div>
+
+
+        <!--<h1 class="title_big_6">삶을 여행하는 사람들이<br>
+            연결되는 곳,스토버</h1>
+
+            <div class="circle_box">
+                <div class="circle">
+                    <p class="circle_content">사람과 사람을<br>이어주고</p>
+                </div>
+                <div class="circle">
+                    <p class="circle_content">여행자에게<br>색다른 경험과</p>
+                </div>
+                
+                <div class="circle">
+                    <p class="circle_content">여행의 모든 것을<br>해결해주고<br>도와주는 곳</p>
+                </div>
+                
+                <div class="circle">
+                    <p class="circle_content">편안하고 안정적인<br>여행을 위한 서비스</p>
+                </div>  
+            </div>-->
+        
+    </section>
+
+
+
+    <section id="section7">
+        <div class="content_wrap7">
+            <h2 class="content7">해외 체류형 여행자들에게 연결점을 제공하여 타지에서도<br>
+            편리하게 적응하고 다양한 경험을 누릴 수 있도록 스토버는 만들어갑니다.</h2>
+            <button class="btn_use_stover">STOVER 이용하기</button>
+        </div>
+    </section>
+
+
+    <section id="section8">
+        <div class="contents_wrap8">
+            <h2 class="team">Stover Team</h2>
+
+                <div class="content_img8">
+                    <img src="./img_src/team1.png" alt="캐릭터 이미지">
+                    <!-- <h2 class="name">Planner | Sung Yunji</h2>
+                    <p class="content_wrap_p">안녕하세요. 스토버 서비스를 제작한 클릭 라이크의 팀의 팀장이자<br>
+                    기획을 담당한 성윤지입니다.</p>
+                    <p class="content_wrap_p">스토버 서비스의 제작 과정이 담긴 PPT 문서와<br>
+                    저희 기획 역량에 대하여 더 궁금하시며 아래의<br>
+                    포트폴리오를 클릭하여 방문해주세요!</p> -->
+
+                    <!-- <button class="portfolio">Portfolio</button> -->
+                </div>
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div class="footer_whole_wrap">
+        <h2 class="footer_title">(주)스토버 | 대표 Click Like</h2>
+
+        <div class="footer_wrap">
+        <div class="left_footer_content">
+            사업자등록번호: 180-86-01691<br>
+            관광사업자등록번호: 제2023-11호<br>
+            주소: 경기 의왕시 내손동 247-1, 디자인관 5층<br>
+            당사는 계원예술대학교 디지털미디어디자인과에 소속 되어있습니다.
+        </div>
+
+        <div class="right_footer_content">
+            고객 문의: dollarmoon21@gmail.com (10:00 ~17:00)<br>
+            채용 문의: Team 소개에서 해당 멤버 포트폴리오로 이동하여 이메일을 찾으십시오.
+            <div class="footer_sns">
+                <p class="sns">SNS</p>
+                <a href="https://instagram.com/stover.official?igshid=OGQ5ZDc2ODk2ZA=="><img src="./img_src/icon_instargram.png" alt="logo"></a>
+                <a href=""><img src="./img_src/icon_youtube.png" alt="logo"></a>
+            </div>
+        </div>
+    </div>
+</div>
+    </footer>
+
+</div>
+
+<script>
+
+const background = document.querySelector('.bg_wrap');
+
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+
+    // Adjust the background position based on mouse coordinates
+    background.style.transform = `translate(-${mouseX * 50}px, -${mouseY * 50}px)`;
+});
+
+
+
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('.header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('.header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+
+
+
+
+// 롤링 배너 복제본 생성
+let roller = document.querySelector('.flow');
+roller.id = 'roller1'; // 아이디 부여
+
+let clone = roller.cloneNode(true);
+// cloneNode : 노드 복제. 기본값은 false. 자식 노드까지 복제를 원하면 true 사용
+clone.id = 'roller2';
+document.querySelector('.flow_boxes').appendChild(clone); // wrap 하위 자식으로 부착
+
+document.querySelector('#roller1').style.left = '0px';
+document.querySelector('#roller2').style.left = document.querySelector('.flow ul').offsetWidth + 'px';
+// offsetWidth : 요소의 크기 확인(margin을 제외한 padding값, border값까지 계산한 값)
+
+roller.classList.add('original');
+clone.classList.add('clone');
+
+
+
+//클릭하면~배경 바꿔줘
+//0번째 클릭하면 0번째 그림으로 바꿔줘(0번째 배열을 붙여줘)
+//바꾼다 = 클래스를 붙인다. or 새로운 값을 넣는다.
+//1. 인덱스 값 가져오기
+
+</script>
+</body>
+</html>
